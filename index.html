@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>ToDo List</title>
+</head>
+<body>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
+    <main>
+        <div class="btnBlock">
+            <button id="addTask" onclick="setModal('visible')">Add new todo</button>
+        </div>
+        <div class="taskList"></div>
+        <div class="history">
+            <ul>
+                <li class="historyItem todo">
+                    Not started
+                </li>
+                <li class="historyItem progress">
+                    In progress
+                </li>
+                <li class="historyItem done">
+                    Done
+                </li>
+            </ul>
+        </div>
+        <form id="myModal" class="modal" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modalTitle">Add new todo</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>   
+                <div class="modal-main">
+                    <input type="number" class="indexInp">
+                    <input type="text" id="taskTitle" placeholder='title' required>
+                    <input type="date" id="deadline"   required>
+                    <select id="status" required>
+                        <option value="" disabled selected>Status</option>
+                        <option value="todo">ToDo</option>
+                        <option value="progress">In progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancelBtn" onclick="cancelModal()">Cancel</button>
+                    <button type="button" class="submitBtn" onclick="addNewItem()">Add</button>
+                    <button type="button" class="saveBtn">Save</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
